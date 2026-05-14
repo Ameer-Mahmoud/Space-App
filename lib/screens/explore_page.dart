@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:space/detail_page.dart';
-import 'explore_button.dart';
+import 'package:space/core/constants.dart';
+import 'package:space/data/planet_data.dart';
+import 'package:space/screens/detail_page.dart';
+import 'package:space/widgets/explore_button.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -13,22 +15,16 @@ class _ExplorePageState extends State<ExplorePage> {
   final PageController _pageController = PageController();
   int currentIndex = 0;
 
-  final List<String> planetNames = [
-    "Sun",
-    "Mercury",
-    "Venus",
-    "Earth",
-    "Mars",
-    "Jupiter",
-    "Saturn",
-    "Uranus",
-    "Neptune",
-  ];
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff0E0E0E),
+      backgroundColor: AppColors.background,
       body: Stack(
         children: [
           Stack(
@@ -42,7 +38,7 @@ class _ExplorePageState extends State<ExplorePage> {
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                     colors: [
-                      const Color(0xff0E0E0E).withOpacity(0.8),
+                      AppColors.background.withOpacity(0.8),
                       Colors.transparent,
                     ],
                   ),
@@ -50,75 +46,53 @@ class _ExplorePageState extends State<ExplorePage> {
               ),
             ],
           ),
-
           Center(
             child: SizedBox(
               width: 342,
               height: 339,
-              child: PageView(
+              child: PageView.builder(
                 controller: _pageController,
+                itemCount: planets.length,
                 onPageChanged: (index) {
                   setState(() {
                     currentIndex = index;
                   });
                 },
-                children: [
-                  Image.asset("assets/images/sun.png"),
-                  Image.asset("assets/images/mercury.png"),
-                  Image.asset("assets/images/venus.png"),
-                  Image.asset("assets/images/earth.png"),
-                  Image.asset("assets/images/mars.png"),
-                  Image.asset("assets/images/jupiter.png"),
-                  Image.asset("assets/images/saturn.png"),
-                  Image.asset("assets/images/uranus.png"),
-                  Image.asset("assets/images/neptune.png"),
-                ],
+                itemBuilder: (context, index) {
+                  return Image.asset(planets[index].image);
+                },
               ),
             ),
           ),
-
           ExploreButton(
-            text: "Explore ${planetNames[currentIndex]}",
+            text: "Explore ${planets[currentIndex].name}",
             action: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DetailPage(planetIndex: currentIndex,)),
+                MaterialPageRoute(
+                  builder: (context) =>
+                      DetailPage(planet: planets[currentIndex]),
+                ),
               );
             },
           ),
-
           Positioned(
             top: 165,
             left: 20,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               alignment: Alignment.centerLeft,
-              child: Text(
+              child: const Text(
                 "Which planet\nwould you like to explore?",
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontFamily: "SpaceGrotesk",
-                ),
+                style: AppTextStyles.title,
               ),
             ),
           ),
-
           Container(
             alignment: Alignment.topCenter,
             padding: const EdgeInsets.symmetric(vertical: 26),
-            child: const Text(
-              "Explore",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-                fontFamily: "SpaceGrotesk",
-              ),
-            ),
+            child: const Text("Explore", style: AppTextStyles.title),
           ),
-
           Positioned(
             bottom: 131,
             left: 0,
@@ -129,7 +103,7 @@ class _ExplorePageState extends State<ExplorePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleAvatar(
-                    backgroundColor: const Color(0xffEE403D),
+                    backgroundColor: AppColors.primary,
                     child: IconButton(
                       icon: const Icon(Icons.arrow_back, color: Colors.white),
                       onPressed: () {
@@ -143,20 +117,18 @@ class _ExplorePageState extends State<ExplorePage> {
                     ),
                   ),
                   Text(
-                    planetNames[currentIndex],
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontFamily: "SpaceGrotesk",
-                    ),
+                    planets[currentIndex].name,
+                    style: AppTextStyles.subTitle,
                   ),
                   CircleAvatar(
-                    backgroundColor: const Color(0xffEE403D),
+                    backgroundColor: AppColors.primary,
                     child: IconButton(
-                      icon: const Icon(Icons.arrow_forward, color: Colors.white),
+                      icon: const Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
                       onPressed: () {
-                        if (currentIndex < planetNames.length - 1) {
+                        if (currentIndex < planets.length - 1) {
                           _pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,

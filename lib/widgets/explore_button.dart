@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'explore_page.dart';
-
+import 'package:space/core/constants.dart';
 
 class ExploreButton extends StatelessWidget {
+  final String text;
+  final VoidCallback action;
 
-  String text;
-  VoidCallback  action;
-  ExploreButton({required this.text,required this.action});
-
+  const ExploreButton({super.key, required this.text, required this.action});
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +13,13 @@ class ExploreButton extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Padding(
         padding: const EdgeInsets.only(bottom: 22),
-
         child: InkWell(
-          onTap: action ,
+          onTap: action,
           child: Container(
-
-            margin: EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
-            padding: EdgeInsets.symmetric(
-              vertical: 12,
-              horizontal: 24,
-            ),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
             decoration: BoxDecoration(
-              color: Color(0xffEE403D),
+              color: AppColors.primary,
               borderRadius: BorderRadius.circular(29),
             ),
             child: Row(
@@ -37,13 +27,14 @@ class ExploreButton extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 20,
                     color: Colors.white,
                   ),
                 ),
-                Icon(Icons.arrow_right_alt_rounded, color: Color(0xffffffff),)],
+                const Icon(Icons.arrow_right_alt_rounded, color: Colors.white),
+              ],
             ),
           ),
         ),
