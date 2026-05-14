@@ -1,0 +1,163 @@
+import 'package:space/models/planet.dart';
+
+const List<Planet> planets = [
+  Planet(
+    name: "Sun",
+    title: "Sun: The Heart of Our Solar System",
+    image: "assets/images/sun.png",
+    bigImage: "assets/images/sun.png",
+    modelPath: "assets/3d/sun.glb",
+    about:
+        "The Sun is the heart of our solar system, a massive ball of plasma that provides heat, light, and energy to everything within its gravitational pull. Its immense size and temperature are fueled by nuclear fusion, a process that combines hydrogen atoms into helium, releasing vast amounts of energy. The Sun's magnetic field, which is constantly changing, influences solar activity like sunspots and solar flares, affecting space weather and potentially disrupting Earth-based technologies.",
+    details: [
+      "Radius (km): 696,340",
+      "Mass (kg): 1.989 × 10³⁰",
+      "Gravity (m/s²): 9.81",
+      "Surface Area (km²) : 6.09 × 10¹²",
+    ],
+  ),
+  Planet(
+    name: "Mercury",
+    title: "Mercury: The Closest Planet",
+    image: "assets/images/mercury.png",
+    bigImage: "assets/images/mercury.png",
+    modelPath: "assets/3d/mercury.glb",
+    about:
+        "Mercury is the smallest planet in our solar system and the closest to the Sun—is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
+    details: [
+      "Distance from Sun (km): 57,910,000",
+      "Length of Day (hours): 1,408",
+      "Orbital Period (days): 88",
+      "Radius (km): 2,439.7",
+      "Mass (kg): 3.285 × 10²³",
+      "Gravity (m/s²): 3.7",
+      "Surface Area (km²) : 7.48 × 10⁷",
+    ],
+  ),
+  Planet(
+    name: "Venus",
+    title: "Venus: Earth's Toxic Twin",
+    image: "assets/images/venus.png",
+    bigImage: "assets/images/venus.png",
+    modelPath: "assets/3d/venus.glb",
+    about:
+        "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
+    details: [
+      "Distance from Sun (km): 108,200,000",
+      "Length of Day (hours): 5,832",
+      "Orbital Period (days): 225",
+      "Radius (km): 6,051.8",
+      "Mass (kg): 4.867 × 10²⁴",
+      "Gravity (m/s²): 8.87",
+      "Surface Area (km²) : 4.60 × 10⁸",
+    ],
+  ),
+  Planet(
+    name: "Earth",
+    title: "Earth: Our Blue Marble",
+    image: "assets/images/earth.png",
+    bigImage: "assets/images/earth_2.png",
+    modelPath: "assets/3d/earth.glb",
+    about:
+        "Earth is the only known planet that supports life. Its unique mix of water, atmosphere, and distance from the Sun makes it habitable.",
+    details: [
+      "Distance from Sun (km): 149,598,026",
+      "Length of Day (hours): 23.93",
+      "Orbital Period (years): 1",
+      "Radius (km): 6,371",
+      "Mass (kg): 5.972 × 10²⁴",
+      "Gravity (m/s²): 9.81",
+      "Surface Area (km²) : 5.10 × 10⁸",
+    ],
+  ),
+  Planet(
+    name: "Mars",
+    title: "Mars: The Red Planet",
+    image: "assets/images/mars.png",
+    bigImage: "assets/images/mars.png",
+    modelPath: "assets/3d/mars.glb",
+    about:
+        "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.",
+    details: [
+      "Distance from Sun (km): 227,940,000",
+      "Length of Day (hours): 24.6",
+      "Orbital Period (days): 687",
+      "Radius (km): 3,389.5",
+      "Mass (kg): 6.39 × 10²³",
+      "Gravity (m/s²): 3.71",
+      "Surface Area (km²) : 1.45 × 10⁸",
+    ],
+  ),
+  Planet(
+    name: "Jupiter",
+    title: "Jupiter: The Gas Giant",
+    image: "assets/images/jupiter.png",
+    bigImage: "assets/images/jupiter.png",
+    modelPath: "assets/3d/jupiter.glb",
+    about:
+        "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red spot is a centuries-old storm bigger than Earth.",
+    details: [
+      "Distance from Sun (km): 778,500,000",
+      "Length of Day (hours): 9.93",
+      "Orbital Period (years): 11.86",
+      "Radius (km): 69,911",
+      "Mass (kg): 1.898 × 10²⁷",
+      "Gravity (m/s²): 24.79",
+      "Surface Area (km²) : 6.14 × 10¹⁰",
+    ],
+  ),
+  Planet(
+    name: "Saturn",
+    title: "Saturn: The Ringed Planet",
+    image: "assets/images/saturn.png",
+    bigImage: "assets/images/saturn.png",
+    modelPath: "assets/3d/saturn.glb",
+    about:
+        "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
+    details: [
+      "Distance from Sun (km): 1,434,000,000",
+      "Length of Day (hours): 10.7",
+      "Orbital Period (years): 29.45",
+      "Radius (km): 58,232",
+      "Mass (kg): 5.683 × 10²⁶",
+      "Gravity (m/s²): 10.44",
+      "Surface Area (km²) : 4.27 × 10¹⁰",
+    ],
+  ),
+  Planet(
+    name: "Uranus",
+    title: "Uranus: The Tilted Planet",
+    image: "assets/images/uranus.png",
+    bigImage: "assets/images/uranus.png",
+    modelPath: "assets/3d/uranus.glb",
+    about:
+        "Uranus is the seventh planet from the Sun, and has the third-largest diameter in our solar system. It was the first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star.",
+    details: [
+      "Distance from Sun (km): 2,871,000,000",
+      "Length of Day (hours): 17.2",
+      "Orbital Period (years): 84",
+      "Radius (km): 25,362",
+      "Mass (kg): 8.681 × 10²⁵",
+      "Gravity (m/s²): 8.69",
+      "Surface Area (km²) : 8.11 × 10⁹",
+    ],
+  ),
+  Planet(
+    name: "Neptune",
+    title: "Neptune: The Windiest Planet",
+    image: "assets/images/neptune.png",
+    bigImage: "assets/images/neptune.png",
+    modelPath: "assets/3d/neptune.glb",
+    about:
+        "Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth and most distant major planet in our solar system.",
+    details: [
+      "Distance from Sun (km): 4,495,000,000",
+      "Length of Day (hours): 16.1",
+      "Orbital Period (years): 164.8",
+      "Radius (km): 24,622",
+      "Mass (kg): 1.024 × 10²⁶",
+      "Gravity (m/s²): 11.15",
+      "Surface Area (km²) : 7.62 × 10⁹",
+    ],
+  ),
+];
