@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Planet {
   final String name;
   final String title;
@@ -6,6 +8,7 @@ class Planet {
   final String modelPath;
   final String about;
   final List<String> details;
+  final Color accentColor;
 
   const Planet({
     required this.name,
@@ -15,5 +18,6 @@ class Planet {
     required this.modelPath,
     required this.about,
     required this.details,
+    this.accentColor = const Color(0xffEE403D),
   });
 }

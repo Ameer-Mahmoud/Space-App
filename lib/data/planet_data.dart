@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:space/models/planet.dart';
 
 const List<Planet> planets = [
@@ -7,13 +8,14 @@ const List<Planet> planets = [
     image: "assets/images/sun.png",
     bigImage: "assets/images/sun.png",
     modelPath: "assets/3d/sun.glb",
+    accentColor: Color(0xffFFA726),
     about:
-        "The Sun is the heart of our solar system, a massive ball of plasma that provides heat, light, and energy to everything within its gravitational pull. Its immense size and temperature are fueled by nuclear fusion, a process that combines hydrogen atoms into helium, releasing vast amounts of energy. The Sun's magnetic field, which is constantly changing, influences solar activity like sunspots and solar flares, affecting space weather and potentially disrupting Earth-based technologies.",
+        "The Sun is the heart of our solar system, a massive ball of plasma that provides heat, light, and energy to everything within its gravitational pull. Its immense size and temperature are fueled by nuclear fusion, combining hydrogen into helium and releasing vast amounts of energy.",
     details: [
       "Radius (km): 696,340",
       "Mass (kg): 1.989 × 10³⁰",
-      "Gravity (m/s²): 9.81",
-      "Surface Area (km²) : 6.09 × 10¹²",
+      "Gravity (m/s²): 274",
+      "Surface Temp (°C): 5,500",
     ],
   ),
   Planet(
@@ -22,16 +24,16 @@ const List<Planet> planets = [
     image: "assets/images/mercury.png",
     bigImage: "assets/images/mercury.png",
     modelPath: "assets/3d/mercury.glb",
+    accentColor: Color(0xffB0BEC5),
     about:
-        "Mercury is the smallest planet in our solar system and the closest to the Sun—is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
+        "Mercury is the smallest planet in our solar system and the closest to the Sun — only slightly larger than Earth's Moon. It's the fastest planet, zipping around the Sun every 88 Earth days.",
     details: [
-      "Distance from Sun (km): 57,910,000",
-      "Length of Day (hours): 1,408",
-      "Orbital Period (days): 88",
+      "Distance from Sun: 57.9M km",
+      "Length of Day: 1,408 h",
+      "Orbital Period: 88 days",
       "Radius (km): 2,439.7",
       "Mass (kg): 3.285 × 10²³",
       "Gravity (m/s²): 3.7",
-      "Surface Area (km²) : 7.48 × 10⁷",
     ],
   ),
   Planet(
@@ -40,16 +42,16 @@ const List<Planet> planets = [
     image: "assets/images/venus.png",
     bigImage: "assets/images/venus.png",
     modelPath: "assets/3d/venus.glb",
+    accentColor: Color(0xffFFCC80),
     about:
-        "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
+        "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures over 460°C.",
     details: [
-      "Distance from Sun (km): 108,200,000",
-      "Length of Day (hours): 5,832",
-      "Orbital Period (days): 225",
+      "Distance from Sun: 108.2M km",
+      "Length of Day: 5,832 h",
+      "Orbital Period: 225 days",
       "Radius (km): 6,051.8",
       "Mass (kg): 4.867 × 10²⁴",
       "Gravity (m/s²): 8.87",
-      "Surface Area (km²) : 4.60 × 10⁸",
     ],
   ),
   Planet(
@@ -58,16 +60,16 @@ const List<Planet> planets = [
     image: "assets/images/earth.png",
     bigImage: "assets/images/earth_2.png",
     modelPath: "assets/3d/earth.glb",
+    accentColor: Color(0xff42A5F5),
     about:
-        "Earth is the only known planet that supports life. Its unique mix of water, atmosphere, and distance from the Sun makes it habitable.",
+        "Earth is the only known planet that supports life. Its unique mix of liquid water, a breathable atmosphere, and ideal distance from the Sun creates the perfect conditions for life as we know it.",
     details: [
-      "Distance from Sun (km): 149,598,026",
-      "Length of Day (hours): 23.93",
-      "Orbital Period (years): 1",
+      "Distance from Sun: 149.6M km",
+      "Length of Day: 23.93 h",
+      "Orbital Period: 365 days",
       "Radius (km): 6,371",
       "Mass (kg): 5.972 × 10²⁴",
       "Gravity (m/s²): 9.81",
-      "Surface Area (km²) : 5.10 × 10⁸",
     ],
   ),
   Planet(
@@ -76,16 +78,16 @@ const List<Planet> planets = [
     image: "assets/images/mars.png",
     bigImage: "assets/images/mars.png",
     modelPath: "assets/3d/mars.glb",
+    accentColor: Color(0xffEF5350),
     about:
-        "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.",
+        "Mars is a dusty, cold, desert world with a very thin atmosphere. Strong evidence suggests Mars was billions of years ago wetter and warmer — and may have once harbored life.",
     details: [
-      "Distance from Sun (km): 227,940,000",
-      "Length of Day (hours): 24.6",
-      "Orbital Period (days): 687",
+      "Distance from Sun: 227.9M km",
+      "Length of Day: 24.6 h",
+      "Orbital Period: 687 days",
       "Radius (km): 3,389.5",
       "Mass (kg): 6.39 × 10²³",
       "Gravity (m/s²): 3.71",
-      "Surface Area (km²) : 1.45 × 10⁸",
     ],
   ),
   Planet(
@@ -94,16 +96,16 @@ const List<Planet> planets = [
     image: "assets/images/jupiter.png",
     bigImage: "assets/images/jupiter.png",
     modelPath: "assets/3d/jupiter.glb",
+    accentColor: Color(0xffFFB74D),
     about:
-        "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red spot is a centuries-old storm bigger than Earth.",
+        "Jupiter is more than twice as massive as all other planets combined. Its Great Red Spot is a centuries-old storm bigger than Earth itself, and it has at least 95 known moons.",
     details: [
-      "Distance from Sun (km): 778,500,000",
-      "Length of Day (hours): 9.93",
-      "Orbital Period (years): 11.86",
+      "Distance from Sun: 778.5M km",
+      "Length of Day: 9.93 h",
+      "Orbital Period: 11.86 yr",
       "Radius (km): 69,911",
       "Mass (kg): 1.898 × 10²⁷",
       "Gravity (m/s²): 24.79",
-      "Surface Area (km²) : 6.14 × 10¹⁰",
     ],
   ),
   Planet(
@@ -112,16 +114,16 @@ const List<Planet> planets = [
     image: "assets/images/saturn.png",
     bigImage: "assets/images/saturn.png",
     modelPath: "assets/3d/saturn.glb",
+    accentColor: Color(0xffFFD54F),
     about:
-        "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
+        "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The rings are made of billions of ice and rock particles ranging in size from tiny grains to house-sized chunks.",
     details: [
-      "Distance from Sun (km): 1,434,000,000",
-      "Length of Day (hours): 10.7",
-      "Orbital Period (years): 29.45",
+      "Distance from Sun: 1.43B km",
+      "Length of Day: 10.7 h",
+      "Orbital Period: 29.45 yr",
       "Radius (km): 58,232",
       "Mass (kg): 5.683 × 10²⁶",
       "Gravity (m/s²): 10.44",
-      "Surface Area (km²) : 4.27 × 10¹⁰",
     ],
   ),
   Planet(
@@ -130,16 +132,16 @@ const List<Planet> planets = [
     image: "assets/images/uranus.png",
     bigImage: "assets/images/uranus.png",
     modelPath: "assets/3d/uranus.glb",
+    accentColor: Color(0xff80DEEA),
     about:
-        "Uranus is the seventh planet from the Sun, and has the third-largest diameter in our solar system. It was the first planet found with the aid of a telescope, Uranus was discovered in 1781 by astronomer William Herschel, although he originally thought it was either a comet or a star.",
+        "Uranus is the seventh planet from the Sun and has the third-largest diameter. It rotates at a nearly 90-degree tilt, essentially rolling around the Sun on its side, making its seasons extreme.",
     details: [
-      "Distance from Sun (km): 2,871,000,000",
-      "Length of Day (hours): 17.2",
-      "Orbital Period (years): 84",
+      "Distance from Sun: 2.87B km",
+      "Length of Day: 17.2 h",
+      "Orbital Period: 84 yr",
       "Radius (km): 25,362",
       "Mass (kg): 8.681 × 10²⁵",
       "Gravity (m/s²): 8.69",
-      "Surface Area (km²) : 8.11 × 10⁹",
     ],
   ),
   Planet(
@@ -148,16 +150,16 @@ const List<Planet> planets = [
     image: "assets/images/neptune.png",
     bigImage: "assets/images/neptune.png",
     modelPath: "assets/3d/neptune.glb",
+    accentColor: Color(0xff5C6BC0),
     about:
-        "Dark, cold, and whipped by supersonic winds, ice giant Neptune is the eighth and most distant major planet in our solar system.",
+        "Dark, cold, and whipped by supersonic winds, Neptune is the eighth and most distant major planet. Its winds can reach 2,100 km/h — the fastest in the solar system.",
     details: [
-      "Distance from Sun (km): 4,495,000,000",
-      "Length of Day (hours): 16.1",
-      "Orbital Period (years): 164.8",
+      "Distance from Sun: 4.50B km",
+      "Length of Day: 16.1 h",
+      "Orbital Period: 164.8 yr",
       "Radius (km): 24,622",
       "Mass (kg): 1.024 × 10²⁶",
       "Gravity (m/s²): 11.15",
-      "Surface Area (km²) : 7.62 × 10⁹",
     ],
   ),
 ];
